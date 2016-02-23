@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "app starter kit",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env DEBUG=:server nodemon -r dotenv/config ./bin/www",
+    "readme": "node ./node_modules/.bin/node-readme"
+  },
+  "repository": "https://github.com/n-j-m/app",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "bookshelf": "^0.9.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
+    "jsonwebtoken": "^5.7.0",
+    "knex": "^0.10.0",
+    "morgan": "^1.7.0",
+    "pg": "^4.4.6"
+  },
+  "devDependencies": {
+    "cross-env": "^1.0.7",
+    "debug": "^2.2.0",
+    "nodemon": "^1.9.0",
+    "sqlite3": "^3.1.1"
+  }
+}
