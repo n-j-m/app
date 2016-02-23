@@ -1,15 +1,41 @@
 # app
 
-![npm](https://img.shields.io/npm/v/app.svg) ![license](https://img.shields.io/npm/l/app.svg) ![github-issues](https://img.shields.io/github/issues/n-j-m/app.svg)
-
 app starter kit
 
-![nodei.co](https://nodei.co/npm/app.png?downloads=true&downloadRank=true&stars=true)
-
-![](https://david-dm.org/n-j-m/app/status.svg)
-![](https://david-dm.org/n-j-m/app/dev-status.svg)
-
 ## Features
+
+## Usage
+
+Clone the repo and initialize git:
+```
+git clone git@github.com:n-j-m/app your_project
+cd your_project
+rm -rf .git
+git init
+npm install
+```
+Add a ```.env``` file at the project root containing the following:
+```
+JWT_SECTRET=yoursecrethere
+PORT=3000                   # optional
+```
+
+**You'll need to install knex globally to run these commands**
+```
+npm install knex -g
+```
+
+Create and seed the database:
+```
+knex migrate:latest
+knex seed:run
+```
+
+Routes:
+```
+POST  /api/auth     # Content-Type: application/json { email: 'jimmy@crackcorn.com', password: 'idontcare' }
+GET   /api/me       # specifiy Authorization header: Bearer [your_token]
+```
 
 ## Scripts
 
@@ -31,13 +57,10 @@ Package | Version | Dev
 [pg](https://www.npmjs.com/package/pg) | ^4.4.6 | ✖
 [cross-env](https://www.npmjs.com/package/cross-env) | ^1.0.7 | ✔
 [debug](https://www.npmjs.com/package/debug) | ^2.2.0 | ✔
+[node-readme](https://www.npmjs.com/package/node-readme) | ^0.1.9 | ✔
 [nodemon](https://www.npmjs.com/package/nodemon) | ^1.9.0 | ✔
 [sqlite3](https://www.npmjs.com/package/sqlite3) | ^3.1.1 | ✔
 
-
-## Contributing
-
-Contributions welcome; Please submit all pull requests against the master branch. If your pull request contains JavaScript patches or features, you should include relevant unit tests. Please check the [Contributing Guidelines](contributng.md) for more details. Thanks!
 
 ## Author
 
@@ -45,4 +68,4 @@ Contributions welcome; Please submit all pull requests against the master branch
 
 ## License
 
- - **ISC** : http://opensource.org/licenses/ISC
+ - **MIT** : http://opensource.org/licenses/MIT

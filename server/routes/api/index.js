@@ -7,7 +7,8 @@ const unprotectedPaths = require('../../config/unprotectedPaths');
 
 apiRouter.use(
   expressJWT({
-    secret: process.env.JWT_SECRET
+    secret: process.env.JWT_SECRET,
+    requestProperty: 'token'
   })
   .unless({ path: unprotectedPaths() })
 );

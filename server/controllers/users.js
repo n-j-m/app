@@ -13,6 +13,15 @@ function createUser(req, res, next) {
     .catch(next);
 }
 
+function me(req, res, next) {
+  const token = req.token;
+
+  User.forge({id: token.id}).fetch()
+    .then(user => res.json(user.toJSON()))
+    .catch(next);
+}
+
 module.exports = {
-  createUser
+  createUser,
+  me
 };
